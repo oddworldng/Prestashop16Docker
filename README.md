@@ -11,10 +11,45 @@ PrestaShop es una aplicación libre y gratuita de eCommerce, diseñada para prop
 
 Actualmente, la forma más sencilla de ejecutar este contenedor es:
 ```
-$ docker run -ti --name prestashop16 -p 8080:80 -d oddworldng/prestashop16
+docker run -ti --name prestashop16 -p 8080:80 -d oddworldng/prestashop16
 ```
 
 Abre esta ruta en tu navegador para comenzar la instalación: `http://localhost:8080`.
+
+## MySQL - Base de datos
+
+Por seguridad, la base de datos la ejecutamos desde un contenedor Docker siguiendo estos pasos:
+
+* Obtener contenedor MySQL: 
+
+```
+docker pull mysql
+```
+
+* Desplegar contenedor MySQL:
+
+```
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+```
+Ver [más información](https://hub.docker.com/_/mysql/) sobre este contenedor.
+
+## PhpMyAdmin - Configurar la base de datos
+
+Podemos configurar nuestra base de datos mediante PhpMyadmin. Para instalar el contenedor debemos seguir estos pasos:
+
+* Obtener contenedor PhpMyAdmin:
+
+```
+docker pull phpmyadmin/phpmyadmin
+```
+
+* Desplegar contenedor PhpMyAdmin:
+
+```
+docker run --name phpmyadmin -d --link mysql:db -p 8081:80 phpmyadmin/phpmyadmin
+```
+
+Ver [más información](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) sobre este contenedor.
 
 ## Licencia
 

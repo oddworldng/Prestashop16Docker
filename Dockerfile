@@ -11,7 +11,9 @@ RUN apt-get install -y apache2 \
 	unzip \
 	php-mysql \
 	wget \
-	php7.0-xml
+	php7.0-xml \
+	php7.0-gd \
+	php7.0-mbstring
 
 # Get PrestaShop
 ADD https://www.prestashop.com/download/old/prestashop_1.6.1.12.zip /tmp/prestashop.zip
