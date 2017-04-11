@@ -14,7 +14,7 @@ Actualmente, la forma más sencilla de ejecutar este contenedor es:
 docker run -ti --name prestashop16 -p 8080:80 -d oddworldng/prestashop16
 ```
 
-Abre esta ruta en tu navegador para comenzar la instalación: `http://localhost:8080`.
+Abre esta ruta en tu navegador para comenzar la instalación: `http://localhost:8080/prestashop`.
 
 ## MySQL - Base de datos
 
